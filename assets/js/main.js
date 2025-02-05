@@ -248,3 +248,27 @@ function navHighlighter()
         }
     })
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("sendEmailButton").addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        // Get user input values
+        let email = "minhtrietwork@gmail.com"; // Your email address
+        let userEmail = document.getElementById("emailInput").value.trim();
+        let subject = encodeURIComponent(document.getElementById("subjectInput").value.trim());
+        let message = encodeURIComponent(document.getElementById("messageInput").value.trim());
+
+        // Check if all fields are filled
+        if (!userEmail || !subject || !message) {
+            alert("Please fill in all fields before sending.");
+            return;
+        }
+
+        // Construct the mailto URL (include user email in the message)
+        let mailtoLink = `mailto:${email}?subject=${subject}&body=From: ${userEmail}%0A%0A${message}`;
+
+        // Open the mail client
+        window.location.href = mailtoLink;
+    });
+});

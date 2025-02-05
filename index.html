@@ -88,7 +88,7 @@
                        
                         <!-- BUTTON -->
                         <div>
-                            <a href="#" class="btn btn-default"> Contact me </a>
+                            <a href="#contact" class="btn btn-default"> Contact me </a>
                         </div>
 
                         <!-- Scroll down -->
@@ -234,7 +234,7 @@
                  </div>
              </div>
              <div class="text padd-15">
-                <p>Looking for Embedded solutions? <a href="#">Click here</a> to contact me!👋</p>
+                <p>Looking for Embedded solutions? <a href="#contact">Click here</a> to contact me!👋</p>
              </div>
         </div>
     </section>
@@ -432,24 +432,24 @@
                     <div class="contact-inputs">
                         <!-- Contact content -->
                          <div class="contact-content">
-                            <input type="email" class="contact-input">
-                            <label for="" class="contact-label">Email</label>
+                            <input type="email" class="contact-input" id="emailInput" required>
+                            <label for="emailInput" class="contact-label">Email</label>
                             <span></span>
                          </div>
                          <!-- Contact content -->
                          <div class="contact-content">
-                            <input type="text" class="contact-input">
-                            <label for="" class="contact-label">Subject</label>
+                            <input type="text" class="contact-input" id="subjectInput" required>
+                            <label for="subjectInput" class="contact-label">Subject</label>
                             <span></span>
                          </div>
 
                         <!-- Contact content -->
                          <di v class="contact-content contact-area">
-                            <textarea name="" id="" cols="30" rows="10" class="contact-input"></textarea>
-                            <label for="" class="contact-label">Message</label>
+                            <textarea id="messageInput" name="" id="" cols="30" rows="10" class="contact-input" required></textarea>
+                            <label for="messageInput" class="contact-label">Message</label>
                             <span></span>
                          </div>
-                         <a href="#" class="btn btn-default">Send an email</a>
+                         <a href="#" class="btn btn-default" id="sendEmailButton">Send an email</a>
                     </div>
                  </form>
              </div>
