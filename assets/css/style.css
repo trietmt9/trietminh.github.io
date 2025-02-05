@@ -854,7 +854,7 @@ h3
     height: 100%;
     padding: 1rem 1rem 1rem 0;
     background: none;
-    color: #fff;
+    color: #333;
     outline: none;
     border: none;
     z-index: 1;
@@ -866,27 +866,39 @@ h3
     top: .40rem;
     width: 100%;
     font-size: var(--small-font-size);
-    transition: .3s;
+    transition: 0.3s;
+    color: #666;
+    pointer-events: none; /* Prevents accidental clicks */
 }
 
-.contact-area
-{
-    height: 7rem;
-}
-
-.contact-area textarea
-{
-    resize: none;
-}
-
-.contact-input:focus + .contact-label
-{
-    top: -.75rem;
+/* Move label up only when the input is focused or has content */
+.contact-input:focus + .contact-label,
+.contact-input:not(:placeholder-shown):not(:focus) + .contact-label {
+    top: -0.75rem;
     left: 0;
     z-index: 10;
     color: var(--color-primary);
 }
 
+/* Hide placeholder text so it doesn't interfere */
+.contact-input::placeholder {
+    color: transparent;
+}
+
+/* Textarea adjustments */
+.contact-area {
+    height: 7rem;
+}
+
+.contact-area textarea {
+    resize: none;
+}
+
+/* Special case for textareas */
+.contact-area .contact-input:focus + .contact-label,
+.contact-area .contact-input:not(:placeholder-shown):not(:focus) + .contact-label {
+    top: -0.75rem;
+}
 /* ======================= THEME CUSTOM ======================= */
 .custom-theme
 {
