@@ -308,6 +308,11 @@
     </section>
 
     <!--================== CERTIFICATES ==================-->
+    <!-- MODAL FOR ZOOM -->
+<div id="imageModal" class="modal">
+   <span class="modal-close" onclick="closeModal()">&times;</span>
+   <img id="modalImage" src="" alt="Zoomed Certificate">
+</div>
     <section class="certificates section" id="certificates">
         <div class="container">
             <!-- section title -->
@@ -334,7 +339,7 @@
                         </div>
                         <span class="term"> Academic </span>
                         <h3 class="certificates-item-title">Chang Gung University exchange internship</h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button"onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
 
@@ -346,10 +351,9 @@
                         </div>
                         <span class="term"> Microcontroller </span>
                         <h3 class="certificates-item-title">nRF SDK Fundamentals</h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
-
                  <div class="certificates-item padd-15" data-category = "microcontroller">
                     <div class="certificates-item-inner">
                         <div class="certificates-item-thumbnail">
@@ -358,7 +362,19 @@
                         </div>
                         <span class="term"> Microcontroller </span>
                         <h3 class="certificates-item-title">nRF SDK Intermediate</h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
+                    </div>
+                 </div>
+
+                 <div class="certificates-item padd-15" data-category = "microcontroller">
+                    <div class="certificates-item-inner">
+                        <div class="certificates-item-thumbnail">
+                            <img src="assets/img/MCU1.png" alt="">
+                            <div class="mask"></div>
+                        </div>
+                        <span class="term"> Microcontroller </span>
+                        <h3 class="certificates-item-title">STM32F4xx Driver Development</h3>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
 
@@ -370,7 +386,7 @@
                         </div>
                         <span class="term"> Programming </span>
                         <h3 class="certificates-item-title">Basic C programming</h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
 
@@ -382,7 +398,7 @@
                         </div>
                         <span class="term"> Programming </span>
                         <h3 class="certificates-item-title"> Advance C programming </h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
 
@@ -394,12 +410,14 @@
                         </div>
                         <span class="term"> Programming </span>
                         <h3 class="certificates-item-title"> C++ Programming  </h3>
-                        <span class="more-button">&hellip;</span>
+                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
                     </div>
                  </div>
             </div>
         </div>
     </section>
+
+    
     <!--================== CONTACT ==================-->
     <section class="contact section" id="contact">
         <div class="container">
