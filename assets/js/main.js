@@ -276,3 +276,116 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = mailtoLink;
     });
 });
+
+// Function to open the modal and show the clicked image
+function openModal(button) {
+    var modal = document.getElementById("imageModal");
+    var modalImg = document.getElementById("modalImage");
+
+    // Find the closest certificate item and its image
+    var certificateItem = button.closest(".certificates-item");
+    var imgElement = certificateItem.querySelector("img");
+
+    // Set the modal image source to the clicked image source
+    if (imgElement) {
+        modalImg.src = imgElement.src;
+        modal.style.display = "flex"; // Show the modal
+    }
+}
+
+// Function to close the modal
+function closeModal() {
+    var modal = document.getElementById("imageModal");
+    modal.style.display = "none"; // Hide the modal
+}
+
+// Close modal when clicking outside the image
+document.getElementById("imageModal").addEventListener("click", function (event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filterContainer = document.querySelector(".certificates-fitler-inner"),
+        filtersBtns = filterContainer.children,
+        certificateItems = document.querySelectorAll(".certificates-item"),
+        itemsPerPage = 6;
+
+    let currentPage = 1;
+    let filteredItems = [...certificateItems]; // Initially, all items are shown
+
+    // Function to filter certificates based on category
+    function filterCertificates(filterValue) {
+        filteredItems = [];
+
+        certificateItems.forEach(item => {
+            if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
+                item.style.display = "block"; // Show matching items
+                filteredItems.push(item);
+            } else {
+                item.style.display = "none"; // Fully hide non-matching items
+            }
+        });
+
+        currentPage = 1;
+        showPage(currentPage);
+        createPaginationControls();
+    }
+
+    // Function to display only items for the current page
+    function showPage(page) {
+        filteredItems.forEach((item, index) => {
+            item.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? "block" : "none";
+        });
+    }
+
+    // Function to create pagination buttons dynamically
+    function createPaginationControls() {
+        const existingPagination = document.querySelector(".pagination");
+        if (existingPagination) existingPagination.remove(); // Remove previous pagination
+
+        const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
+        if (totalPages <= 1) return; // No pagination if one page
+
+        const paginationContainer = document.createElement("div");
+        paginationContainer.classList.add("pagination");
+
+        for (let i = 1; i <= totalPages; i++) {
+            const pageButton = document.createElement("button");
+            pageButton.textContent = i;
+            pageButton.addEventListener("click", function () {
+                currentPage = i;
+                showPage(currentPage);
+                updateActiveButton();
+            });
+
+            paginationContainer.appendChild(pageButton);
+        }
+
+        document.querySelector(".certificates .container").appendChild(paginationContainer);
+        updateActiveButton();
+    }
+
+    // Update active page button
+    function updateActiveButton() {
+        document.querySelectorAll(".pagination button").forEach((btn, index) => {
+            btn.classList.toggle("active", index + 1 === currentPage);
+        });
+    }
+
+    // Attach event listeners to filter buttons
+    for (let i = 0; i < filtersBtns.length; i++) {
+        filtersBtns[i].addEventListener("click", function () {
+            filterContainer.querySelector(".active").classList.remove("active");
+            this.classList.add("active");
+            const filterValue = this.getAttribute("data-filter");
+            filterCertificates(filterValue);
+        });
+    }
+
+    // Initialize with all certificates visible and paginated
+    filterCertificates("all");
+});
+
+
