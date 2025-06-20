@@ -1,533 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <!--================== CSS ==================-->
-    <link rel="stylesheet" href="assets/css/style.css"/>
-    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-    <title>Stephen Truong</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truong Minh Triet | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- ================= HEADER ================= -->   
-    <header class="header" id="header"> 
-        <!-- navigate  -->
-         <nav class="nav container padd-15">
-            <!-- nav logo -->
-             <a href="#" class="nav-logo">
-                <h2> Stephen </h2>
-             </a>
-            <!-- nav menu -->
-             <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <!-- HOME -->
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active-link"> Home </a>
-                    </li>
-
-                    <!--  INTRODUCTION -->
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link"> About </a>
-                    </li>
-
-                    <!--  EXPERIENCES -->
-                    <li class="nav-item">
-                        <a href="#experience" class="nav-link"> Experiences </a>
-                    </li>
-
-                    <!--  CERTIFICATES -->
-                    <li class="nav-item">
-                        <a href="#certificates" class="nav-link"> Certificates </a>
-                    </li>
-
-                    <!--  CONTACT --> 
-                    <li class="nav-item">
-                        <a href="#contact" class="nav-link"> Contact </a>
-                    </li>
-                </ul>
-                <!-- Nav close -->
-                 <div class="nav-close" id="nav-close">
-                    <i class="lni lni-xmark"></i>
-                 </div> 
-             </div>
-             <!-- Nav button -->
-             <div class="nav-buttons"> 
-                <!-- theme -->
-                 <i class="lni lni-colour-palette-3 change-theme" id="theme-button"></i>
-                 <div class="nav-toggle" id="nav-toggle">
-                    <i class="lni lni-menu-cheesburger"></i>
-                 </div>
-             </div>
-         </nav>
-    </header>
-    <!--================== MAIN ==================-->
-    <main class="main-content">
-        <!-- HOME  -->
-         <section class="home" id="home">
-            <div class="container">
-                <!-- INTRO -->
-                 <div class="intro">
-                    <!-- avatar image -->
-                     <img class="avatar" src="assets/img/avatar.jpg" width="300" height="300" alt="Stephen">
-                     <!-- INFO -->
-                      <h1>Stephen Truong</h1>
-                      <h1>(Truong Minh Triet)</h1>
-                     <span class="info-text"> Embedded System Engineer </span>
-
-                      <!-- SOCIAL ICON -->
-                       <ul class="social-icons"> 
-                            <li><a href="https://github.com/trietmt9"><i class="lni lni-github"></i></a></li>
-                            <li><a href="https://www.linkedin.com/in/tr%C6%B0%C6%A1ng-minh-tri%E1%BA%BFt-6743b4269/"><i class="lni lni-linkedin"></i></a></li>
-                            <li><a href="https://www.facebook.com/triet.truongminh.564"><i class="lni lni-facebook"></i></a></li>
-                            <li><a href="https://www.instagram.com/_tm.triet_/"><i class="lni lni-instagram"></i></a></li>
-                            <li><a href="#"><i class="lni lni-youtube"></i></a></li>
-                        </ul>
-                       
-                        <!-- BUTTON -->
-                        <div>
-                            <a href="#contact" class="btn btn-default"> Contact me </a>
-                        </div>
-
-                        <!-- Scroll down -->
-                         <div class="scroll-down">
-                            <a href="#" class="mouse-wrapper">
-                                <span> Scroll down </span>
-                                <span class="mouse">
-                                    <span class="wheel"></span>
-                                </span>
-                            </a>
-                         </div>
-                 </div> 
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="jarvis-logo">
+                <div class="circle"></div>
+                <div class="scan-line"></div>
             </div>
-         </section>
-
-         <!--================== ABOUT ==================-->
-        <section class="about section" id="about">
-            <div class="container">
-                <!--================== TITLE ==================-->
-                <h2 class="section-title padd-15">ABOUT ME</h2>
-                <div class="row">
-                    <div class="about-img padd-15">
-                        <!--================== AVATAR IMG ==================-->
-                        <img class="avatar" src="assets/img/avatar.jpg" alt="">
-                    </div>  
-                    <div class="about-content padd-15">
-                        <div class="rounded">
-                            <div class="row">
-                                <div class="about-text padd-15">
-                                    <!--================== INTRODUCTION ==================-->
-                                    <p>Hi, I'm Triết, but you can call me Stephen! I'm an Embedded Systems Engineer based in Ho Chi Minh City, Vietnam.
-                                    With more than 1 years of hands-on experience in Embedded Systems, I’ve worked on exciting certificates in robotics, medical devices and IoT projects.
-                                    </p>
-                                    <div>
-                                        <a href="./Truong Minh Triet Resume.pdf" class="btn btn-default"> Download CV </a>
-                                    </div>
-                                   </div>
-                                <div class="skills padd-15">
-                                    <div class="row">
-                                        <!-- SKILL ITEM -->
-                                        <div class="skill-item">
-                                            <h4>C/C++ Programming</h4>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 95%; background: rgb(219, 3, 21);"></div>
-                                                <div class="skill-percent">95%</div>   
-                                            </div>
-                                        </div>
-
-                                        <!-- SKILL ITEM -->
-                                        <div class="skill-item">
-                                            <h4> Python Programming</h4>
-                                            <div class="progress">
-                                                <div class="progress-in" style="width: 85%; background: rgb(50, 100, 200);"></div>
-                                                <div class="skill-percent">85%</div>
-                                            </div>
-                                        </div>
-
-                                        <!-- SKILL ITEM -->
-                                        <div class="skill-item">
-                                        <h4> Hardware design </h4>
-                                        <div class="progress">
-                                            <div class="progress-in" style="width: 80%; background: rgb(255, 209, 42);"></div>
-                                            <div class="skill-percent">80%</div>  
-                                        </div>
-                                        </div>
-
-                                        <!-- SKILL ITEM -->
-                                        <div class="skill-item">
-                                        <h4> Linux OS </h4>
-                                        <div class="progress">
-                                            <div class="progress-in" style="width: 90%; background: rgb(100, 20, 250);"></div>
-                                            <div class="skill-percent">90%</div>
-                                        </div>
-                                        </div>
-
-                                        <!-- SKILL ITEM -->
-                                        <div class="skill-item">
-                                        <h4> IoT </h4>
-                                        <div class="progress">
-                                            <div class="progress-in " style="width: 80%; background: rgb(100, 255, 200);" ></div>
-                                            <div class="skill-percent">80%</div>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
+            <h2 class="loading-text">INITIALIZING SYSTEM</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+    
+    <!-- HUD Elements -->
+    <div class="hud-container">
+        <div class="hud-element top-left"></div>
+        <div class="hud-element top-right"></div>
+        <div class="hud-element bottom-left"></div>
+        <div class="hud-element bottom-right"></div>
+        
+        <div class="radar-container">
+            <div class="radar">
+                <div class="radar-beam"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">STEPHEN.OS</div>
+                <div class="logo-subtitle">PORTFOLIO INTERFACE</div>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="#home" class="active">HOME</a>
+                <a href="#about">ABOUT</a>
+                <a href="#experience">EXPERIENCE</a>
+                <a href="#projects">PROJECTS</a>
+                <a href="#skills">SKILLS</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="active-section">
+            <div class="home-content">
+                <div class="home-text">
+                    <div class="typing-container">
+                        <span class="typing-text"></span>
+                        <span class="cursor"></span>
+                    </div>
+                    <h1>Truong Minh Triet</h1>
+                    <h2>Embedded Systems Engineer</h2>
+                    <p>Specialized in hardware design, firmware development, and IoT solutions. Creating innovative embedded systems that bridge the physical and digital worlds.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="Truong Minh Triet Resume.pdf" target="_blank" class="btn primary-btn">DOWNLOAD CV</a>
+                    </div>
+                </div>
+                
+                <div class="home-visual">
+                    <div class="profile-container">
+                        <img src="assets/img/avatar.jpg" alt="Truong Minh Triet" class="profile-image">
+                        <div class="profile-scan"></div>
+                    </div>
+                    
+                    <div class="hologram-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">HARDWARE DESIGN</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-label">FIRMWARE DEVELOPMENT</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-label">ROBOTICS</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="stat-item">
+                            <span class="stat-label">MEDICAL DEVICES</span>
+                            <div class="stat-bar">
+                                <div class="stat-fill" style="width: 80%"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <!-- FACT ITEM -->
-                     <div class="fact-item padd-15">
-                        <i class="lni lni-laptop-phone"></i>
-                        <div class="details">
-                            <h3>10</h3>
-                            <p>certificates done</p>
-                        </div>
-                     </div>
-
-                     <!-- FACT ITEM -->
-                     <div class="fact-item padd-15">
-                        <i class="lni lni-trophy-1"></i>
-                        <div class="details">
-                            <h3>7</h3>
-                            <p>Prizes achieved</p>
-                        </div>
-                     </div>
                 </div>
             </div>
         </section>
-    <!--================== SERVICES ==================-->
-    <section class="services section">
-        <div class="container">
-            <!-- SECTION TITLE -->
-             <h2 class="section-title padd-15"> SERVICES </h2>
-             <div class="row">
-                <!-- SERVICE ITEM -->
-                 <div class="service-item padd-15">
-                    <div class="service-item-inner" style="background: rgb(243, 100, 100);">
-                        <img src="assets/img/Firmware-amico.png" alt="">
-                        <h3>Firmware development</h3>
-                        <p>Develop firmware for a wide range of microcontroller applications, including STM32, nRF5, nRF7, and ESP32 platforms.</p>
-                    </div>
-                 </div>
-
-                 <!-- SERVICE ITEM -->
-                 <div class="service-item padd-15">
-                    <div class="service-item-inner" style="background: rgb(249, 215, 56);">
-                        <img class="avatar" src="assets/img/Hardware.png" alt="">
-                        <h3>Hardware development</h3>
-                        <p>Design and develop hardware for a wide range of applications, including IoT devices, medical technologies, and robotics systems.</p>
-                    </div>
-                 </div>
-
-                  <!-- SERVICE ITEM -->
-                  <div class="service-item padd-15">
-                    <div class="service-item-inner" style="background: rgb(121, 179, 245);">
-                        <img src="assets/img/Cloud.png" alt="">
-                        <h3>IoT solutions</h3>
-                        <p>Provide complete IoT solutions, for applications in smart homes, healthcare, and more.</p>
-                    </div>
-                 </div>
-             </div>
-             <div class="text padd-15">
-                <p>Looking for Embedded solutions? <a href="#contact">Click here</a> to contact me!👋</p>
-             </div>
-        </div>
-    </section>
-    <!--================== EXPERIENCES ==================-->
-    <section class="section" id="experience">
-        <div class="container">
-            <!-- Section title -->
-            <h2 class="section-title padd-15"> EXPERIENCES </h2>
-            <div class="row">
-                <!-- Education -->
-                <div class="education padd-15"> 
-                    <div class="row">
-                       <div class="timeline-box">
-                           <div class="timeline">
-                               <!-- Timeline item -->
-                                <div class="timeline-item">
-                                    <i class="lni lni-graduation-cap-1 timeline-icon"></i>
-                                    <h3 class="timeline-date">
-                                        <i class="lni lni-calendar-days"></i> 2019 - 2023 
-                                    </h3>
-                                    <h3 class="timeline-title"> Bachelor's Degree</h3>
-                                    <p>Bachelor's degree in Automation and Control Technique in Ton duc Thang University</p>
-                                </div>
-                           </div>
-                       </div>
+        
+        <!-- About Section -->
+        <section id="about">
+            <div class="section-header">
+                <h2>ABOUT ME</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <div class="terminal-button"></div>
+                                <div class="terminal-button"></div>
+                                <div class="terminal-button"></div>
+                            </div>
+                            <div class="terminal-title">triet@portfolio: ~/about</div>
+                        </div>
+                        
+                        <div class="terminal-body">
+                            <p><span class="terminal-prompt">$</span> <span class="terminal-command">whoami</span></p>
+                            <p class="terminal-output">Truong Minh Triet - Embedded Systems Engineer</p>
+                            
+                            <p><span class="terminal-prompt">$</span> <span class="terminal-command">cat about.txt</span></p>
+                            <p class="terminal-output">
+                                I am an Embedded Systems Engineer with a passion for creating innovative solutions that bridge hardware and software. With expertise in microcontroller programming, PCB design, and IoT development, I specialize in building robust and efficient embedded systems.
+                                <br><br>
+                                My journey in electronics began during my undergraduate studies, where I developed a strong foundation in both hardware and software aspects of embedded systems. Since then, I've worked on various projects ranging from consumer electronics to industrial automation systems.
+                                <br><br>
+                                I believe in continuous learning and staying updated with the latest technologies in the embedded systems domain. My goal is to contribute to the advancement of technology by creating intelligent and connected devices that make a positive impact.
+                            </p>
+                            
+                            <p><span class="terminal-prompt">$</span> <span class="terminal-command">ls interests/</span></p>
+                            <p class="terminal-output">
+                                IoT.txt  Robotics.txt  Microcontrollers.txt  PCB-Design.txt  Firmware.txt
+                            </p>
+                            
+                            <p><span class="terminal-prompt">$</span> <span class="terminal-command">_</span><span class="terminal-cursor"></span></p>
+                        </div>
                     </div>
                 </div>
-                <!-- Education -->
-                <div class="experience padd-15"> 
-                    <div class="row">
-                        <div class="timeline-box">
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <i class="lni lni-briefcase-2 timeline-icon"></i>
-                                    <!-- Timeline item -->
-                                    <h3 class="timeline-date">
-                                        <i class="lni lni-calendar-days"></i> 2021 - Present
-                                    </h3>
-                                    <h3 class="timeline-title">  Microcontroller </h3>
-                                    <p> I have experience working with ARM Cortex, RISC-V, and AVR microcontroller architectures in both personal certificates and professional industry applications.<br></p>
-                                    <p> I have hands-on expertise with the STM32F4 series, nRF5, and ESP32 microcontrollers, particularly for IoT applications.</p>
-                                </div>
+                
+                <div class="about-visual">
+                    <div class="tech-icons">
+                        <div class="tech-icon">
+                            <i class="fas fa-microchip"></i>
+                            <span>Microcontrollers</span>
+                        </div>
+                        
+                        <div class="tech-icon">
+                            <i class="fas fa-code"></i>
+                            <span>Firmware</span>
+                        </div>
+                        
+                        <div class="tech-icon">
+                            <i class="fas fa-robot"></i>
+                            <span>Robotics</span>
+                        </div>
+                        
+                        <div class="tech-icon">
+                            <i class="fas fa-network-wired"></i>
+                            <span>IoT</span>
+                        </div>
+                        
+                        <div class="tech-icon">
+                            <i class="fas fa-cogs"></i>
+                            <span>Hardware</span>
+                        </div>
+                        
+                        <div class="tech-icon">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>PCB Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience">
+            <div class="section-header">
+                <h2>EXPERIENCE</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Embedded Systems Engineer</h3>
+                        <h4>NuCODE LTE</h4>
+                        <p>Use Zephyr RTOS to program nRF52840 microcontroller to read ADC signals an use PWM to control pumping system for plant watering. Using RTOS feature of Zephyr to schedule tasks with a senior engineer to push data to company’s platform via MQTT.</p>
+                        <p>Nucode board is a custom board belongs to Nucode LTE company. I writing a document to help client understand the board feature, such as how to use it with Zephyr driver and how to upload 
+                        bootloader into the board.</p>
+                        <div class="tech-tags">
+                            <span>ARM Cortex-M</span>
+                            <span>Bluetooth LE</span>
+                            <span>Wi-Fi</span>
+                            <span>C/C++</span>
+                            <span>Zephyr OS</span> 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>Embedded Software Engineer</h3>
+                        <h4>Bosch Global Software Technologies Vietnam</h4>
+                        <p>Responsible for developing and designing MCAL, BSW, RTE and ASW layer based on AUTOSAR standard.</p>
+                        <p>• Enable the peripheral such as GPIO, SPI, CAN bus for TC275 microchip.</p>
+                        <p>• Controlling actuator and reading sensor in car applications.</p>
+                        <p>• Interact with FOTA using Raspberry Pi as a gateway to upload software from microchip to Jetson Orin. </p>
+                        <div class="tech-tags">
+                            <span>AUTOSAR</span>
+                            <span>PCB Design</span>
+                            <span>C/C++</span>
+                            <span>Embedded Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-header">
+                <h2>PROJECTS</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="projects-grid">                  
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Autonomous UAV</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <div class="project-body">
+                        <p>• Developed an autonomous UAV for aerial surveillance and data collection. </p>
+                        <p>• The UAV's flight controller is using STM32F446RE MCU with custom firmware with FreeRTOS.</p>
+                        <p>• Designed the PCB for the flight controller, integrating sensors and communication modules.</p>
+                        <p>• Implemented flight control PID algorithms and Kalman filter for sensor fusion.</p>
+                        <p>• Using ROS2 for automation task.</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-status">
+                            <div class="status-dot completed"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Lazer-light cueing shoe</h3>
+                        <div class="project-year">2024</div>
+                    </div>
+                    <div class="project-body">
+                        <p>• Design a Lazer-light cueing shoe for Parkinson Diseases Individual</p>
+                        <p>• Design hardware using STM32F446RE microchip communicates with ICM20948 IMU via SPI protocol to capture foot motion, NRF24L01 to synchronize the data from both shoes and BLE to upload data from shoes to computer and FOTA applications.</p>
+                        <p>• Design firmware for reading data from IMU, NRF24L01, JDY-18 BLE and FSR sensor. And transmit to the Qt application via BLE protocol</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-status">
+                            <div class="status-dot completed"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Custom Development Board</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <div class="project-body">
+                        <p>• This project target is to design a custom Arduino board.</p>
+                        <p>• Designed a custom development board using Atmega328p microcontroller.</p>
+                        <p>• The board features an Atmega328p microcontrollers, and connectivity options.</p>
+                        <p>• Designed the PCB layout and schematic using Altium Designer.</p>
+                        <p>• Build a simple HAL firmware for the board.</p> 
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-status">
+                            <div class="status-dot completed"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
 
-                                <!-- Timeline item -->
-                                <div class="timeline-item">
-                                    <i class="lni lni-briefcase-2 timeline-icon"></i>
-                                    <!-- Timeline item -->
-                                    <h3 class="timeline-date">
-                                        <i class="lni lni-calendar-days"></i> 2020 - 2024 
-                                    </h3>
-                                    <h3 class="timeline-title">  Robot Development </h3>
-                                    <p>I actively use ROS (Robot Operating System) in robotics and autonomous development certificates, such as designing autonomous drones and mobile robots. This involves tasks like sensor integration, navigation, and control system implementation to achieve fully functional and intelligent systems.</p>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Kambria Hackathon</h3>
+                        <div class="project-year">2022</div>
+                    </div>
+                    <div class="project-body">
+                        <p>• This project is used in Kambria Hackathon during the Covid pandemic.</p>
+                        <p>• Working with Ohmni Robot provided by Organizing committee.</p>
+                        <p>• Using ROS1 to control and program the robot for automation task.</p>
+                        <p>• Using Arduino to read medical sensor such as heart rate, temperature and SPO2 and trasnmit to NodeRed server.</p>
+                        <p>• The Robot and Arduino is communicate via a ROS node so the robot can collect data from Arduino.</p> 
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-status">
+                            <div class="status-dot completed"></div>
+                            <span>Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-header">
+                <h2>SKILLS & CERTIFICATIONS</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="skills-content">
+                <div>
+                    <div class="skills-category">
+                        <h3>// PROGRAMMING LANGUAGES</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">C/C++</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%"></div>
                                 </div>
-
-                                <div class="timeline-item">
-                                    <i class="lni lni-briefcase-2 timeline-icon"></i>
-                                    <!-- Timeline item -->
-                                    <h3 class="timeline-date">
-                                    <i class="lni lni-calendar-days"></i> 2022 - Present  
-                                    </h3>
-                                    <h3 class="timeline-title">  Medical Device </h3>
-                                    <p> I have hands-on experience designing both hardware and firmware for STM32 and ESP32 microcontrollers for medical applications such as patient monitoring devices and wearable health trackers. </p>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Python</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
                                 </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Assembly</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Rust</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 50%"></div>
                                 </div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>// HARDWARE & ELECTRONICS</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">PCB Design</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Circuit Analysis</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Signal Processing</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!--================== CERTIFICATES ==================-->
-    <!-- MODAL FOR ZOOM -->
-<div id="imageModal" class="modal">
-   <span class="modal-close" onclick="closeModal()">&times;</span>
-   <img id="modalImage" src="" alt="Zoomed Certificate">
-</div>
-    <section class="certificates section" id="certificates">
-        <div class="container">
-            <!-- section title -->
-            <h2 class="section-title padd-15">CERTIFICATES</h2>
-            <div class="row">
-                <div class="certificates-filter padd-15">
-                    <div class="certificates-fitler-inner">
-                        <button type="button" class="active" data-filter="all" > All </button>
-                        <button type="button" data-filter="academic"> Academic </button>
-                        <button type="button" data-filter="programming"> Programming </button>
-                        <button type="button" data-filter="microcontroller"> Microcontroller </button>
-                        <button type="button" data-filter="iot"> IoT </button>
-                        <button type="button" data-filter="ai"> AI </button>
-                    </div>
-                </div>
-            </div>
-            <div class="row certificates-items">
-                <!-- CERTIFICATE ITEM -->
-                <div class="certificates-item padd-15" data-category = "academic">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/Truong Minh Triet Certificate-1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Academic </span>
-                        <h3 class="certificates-item-title">Chang Gung University exchange internship</h3>
-                        <span class="more-button"onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-
-                 <div class="certificates-item padd-15" data-category = "microcontroller">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/nRF-Connect-SDK-Fundamentals_nRF-Connect-SDK-Fundamentals_minhtrietwork@gmail.com_-1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Microcontroller </span>
-                        <h3 class="certificates-item-title">nRF SDK Fundamentals</h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-                 <div class="certificates-item padd-15" data-category = "microcontroller">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/nRF-Connect-SDK-Intermediate_nRF-Connect-SDK-Intermediate_minhtrietwork@gmail.com_-1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Microcontroller </span>
-                        <h3 class="certificates-item-title">nRF SDK Intermediate</h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-
-                 <div class="certificates-item padd-15" data-category = "microcontroller">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/MCU1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Microcontroller </span>
-                        <h3 class="certificates-item-title">STM32F4xx Driver Development</h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-
-                 <div class="certificates-item padd-15" data-category = "programming">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/C-Basics-1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Programming </span>
-                        <h3 class="certificates-item-title">Basic C programming</h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-
-                 <div class="certificates-item padd-15" data-category = "programming">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/C-advance-1.png" alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Programming </span>
-                        <h3 class="certificates-item-title"> Advance C programming </h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-
-                 <div class="certificates-item padd-15" data-category = "programming">
-                    <div class="certificates-item-inner">
-                        <div class="certificates-item-thumbnail">
-                            <img src="assets/img/C++_Certificate-1.png"  alt="">
-                            <div class="mask"></div>
-                        </div>
-                        <span class="term"> Programming </span>
-                        <h3 class="certificates-item-title"> C++ Programming  </h3>
-                        <span class="more-button" onclick="openModal(this)">&hellip;</span>
-                    </div>
-                 </div>
-            </div>
-        </div>
-    </section>
-
-    
-    <!--================== CONTACT ==================-->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <!-- Section Title -->
-             <h2 class="section-title padd-15">CONTACT</h2>
-             <div class="row">
-                <!-- Contact box -->
-                <div class="contact-box padd-15">
-                    <div class="contact-data">
-                        <!-- Contact information -->
-                         <div class="contact-information">
-                            <h3 class="contact-subtitle"> Phone </h3>
-                            <span class="contact-description">
-                                <i class="lni lni-phone contact-icon"></i>
-                                +84 898982609
-                            </span>
-                         </div>
-                        <!-- Contact information -->
-                        <div class="contact-information">
-                            <h3 class="contact-subtitle"> Email </h3>
-                            <span class="contact-description">
-                                <i class="lni lni-user-4 contact-icon"></i>
-                                minhtrietwork@gmail.com
-                            </span>
-                         </div>
-                    </div>     
-                </div>
-                <!-- Contact form -->
-                 <form action="" class="contact-form padd-15">
-                    <div class="contact-inputs">
-                        <!-- Contact content -->
-                         <div class="contact-content">
-                            <input type="email" class="contact-input" id="emailInput" placeholder="" required>
-                            <label for="emailInput" class="contact-label">Email</label>
-                            <span></span>
-                         </div>
-                         <!-- Contact content -->
-                         <div class="contact-content">
-                            <input type="text" class="contact-input" id="subjectInput" placeholder="" required>
-                            <label for="subjectInput" class="contact-label">Subject</label>
-                            <span></span>
-                         </div>
-
-                        <!-- Contact content -->
-                         <di v class="contact-content contact-area">
-                            <textarea id="messageInput" name="" id="" cols="30" rows="10" class="contact-input" placeholder="" required></textarea>
-                            <label for="messageInput" class="contact-label">Message</label>
-                            <span></span>
-                         </div>
-                         <a href="#contact" class="btn btn-default" id="sendEmailButton">Send an email</a>
-                    </div>
-                 </form>
-             </div>
-        </div>
-    </section>
-    </main>
-    <!--================== THEME CUSTOMIZE ==================-->
-    <div class="custom-theme">
-        <div class="card">
-            <h2>Custom your view</h2>
-            <p>Config your font size, color and background</p>
-            <!-- Font Size -->
-             <div class="font-size">
-                <h3>Font Size</h3>
+                
                 <div>
-                    <h6>Aa</h6>
-                    <div class="choose-size">
-                        <span class="font-size-1"></span>
-                        <span class="font-size-2"></span>
-                        <span class="font-size-3 active"></span>
-                        <span class="font-size-4"></span>
-                    </div>
-                    <h3>Aa</h3>
-                </div>
-             </div>
-            <!-- Color -->
-            <div class="color">
-                <h3>Color</h3>
-                    <div class="choose-color">
-                        <span class="color-1"></span>
-                        <span class="color-2"></span>
-                        <span class="color-3 active"></span>
-                        <span class="color-4"></span>
-                        <span class="color-5"></span>
-                    </div>
-            </div>
-            <!-- Background -->
-             <div class="background">
-                <h3>Background</h3>
-                    <div class="choose-bg">
-                        <div class="bg-1 active">
-                            <span></span>
-                            <h5 for="bg-1"> Light </h5>
-                        </div>
-                        <div class="bg-2">
-                            <span></span>
-                            <h5 for="bg-2"> Dim </h5>
-                        </div>
-                        <div class="bg-3">
-                            <span></span>
-                            <h5 for="bg-3"> Dark </h5>
-                        </div>
-                    </div>
-             </div>
-        </div>
-    </div>
-    <!--================== SWIPERJS ==================-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <div class="skills-category">
+                        <h3>// EMBEDDED SYSTEMS</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">ARM Cortex-M</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">RTOS</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="skill-item">
+                                <div class="skill-icon">Embedded Linux</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%"></div>
+                                </div>
+                            </div>
 
-    <!--================== JS ==================-->
+                            <div class="skill-item">
+                                <div class="skill-icon">Qt framework</div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>// CERTIFICATIONS</h3>
+                        <div class="certificates-grid">
+                            <div class="certificate-item">
+                                <img src="assets/img/C-Basics-1.png" alt="C Basics Certificate">
+                                <span>C Programming Basics</span>
+                            </div>
+                            
+                            <div class="certificate-item">
+                                <img src="assets/img/C-advance-1.png" alt="Advanced C Certificate">
+                                <span>Advanced C Programming</span>
+                            </div>
+                            
+                            <div class="certificate-item">
+                                <img src="assets/img/C++_Certificate-1.png" alt="C++ Certificate">
+                                <span>C++ Programming</span>
+                            </div>
+                            
+                            <div class="certificate-item">
+                                <img src="assets/img/nRF-Connect-SDK-Fundamentals_nRF-Connect-SDK-Fundamentals_minhtrietwork@gmail.com_-1.png" alt="nRF Connect SDK Fundamentals">
+                                <span>nRF Connect SDK Fundamentals</span>
+                            </div>
+                            
+                            <div class="certificate-item">
+                                <img src="assets/img/nRF-Connect-SDK-Intermediate_nRF-Connect-SDK-Intermediate_minhtrietwork@gmail.com_-1.png" alt="nRF Connect SDK Intermediate">
+                                <span>nRF Connect SDK Intermediate</span>
+                            </div>
+                            
+                            <div class="certificate-item">
+                                <img src="assets/img/Truong Minh Triet Certificate-1.png" alt="Professional Certificate">
+                                <span>Professional Embedded Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>CONTACT</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>minhtrietwork@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>Ho Chi Minh City, Vietnam</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Website</h3>
+                            <p>trietminh.github.io</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>LinkedIn</h3>
+                            <p>https://www.linkedin.com/in/trương-minh-triết-6743b4269/</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Github</h3>
+                            <p>https://github.com/trietmt9</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <div class="form-header">
+                        <h3>Send Me a Message</h3>
+                    </div>
+                    
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn primary-btn">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <div class="logo-text">STEPHEN.OS</div>
+                <div class="logo-subtitle">PORTFOLIO INTERFACE</div>
+            </div>
+            
+            <div class="footer-social">
+                <a href="https://github.com/trietmt9"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/trương-minh-triết-6743b4269/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/triet.truongminh.564/"><i class="fab fa-facebook"></i></a>
+                <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+            </div>
+            
+            <div class="footer-copyright">
+                &copy; 2025 Truong Minh Triet. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Custom JavaScript -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>

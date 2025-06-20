@@ -1,391 +1,313 @@
-const navMenu = document.getElementById("nav-menu"), 
-      navToggle = document.getElementById("nav-toggle"),
-      navClose = document.getElementById("nav-close")
-// =================== SHOW MENU ===================
-/* validate if constant exists */
-if(navToggle)
-{
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add("show-menu");
-    })
-}
-// =================== MENU HIDE ===================
-/* validate if constant exists */
-if(navClose)
-    {
-        navClose.addEventListener('click', () => {
-            navMenu.classList.remove("show-menu");
-        })
-    }
+/**
+ * Jarvis-inspired Sci-Fi Portfolio
+ * Author: Truong Minh Triet
+ * Theme: Iron Man Jarvis UI
+ */
 
-// =================== REMOVE MENU MOBILE ===================
-const navLinks = document.querySelectorAll(".nav-link");
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize the website
+    initLoading();
+    initNavigation();
+    initTypingEffect();
+    initContactForm();
+});
 
-function linkAction()
-{
-    //click on nav link remove nav menu
-    const navMenu = document.getElementById("nav-menu");
-    navMenu.classList.remove("show-menu");
-}
-navLinks.forEach(n=>n.addEventListener('click', linkAction));
-
-// =================== CHANGE BACKGROUND HEADER ===================
-function scrollHeader()
-{
-    const header = document.getElementById("header");
-    if(this.scrollY >= 80) header.classList.add("scroll-header"); else header.classList.remove("scroll-header");
-}
-window.addEventListener("scroll", scrollHeader);
-
-// =================== CERTIFICATE FILTER ===================
-const filterContainer = document.querySelector(".certificates-fitler-inner"),
-      filtersBtns = filterContainer.children,
-      totalFilterBtns = filtersBtns.length,
-      certificateItems = document.querySelectorAll(".certificates-item"),
-      totalCertificateItems = certificateItems.length;
-
-      for(let i=0; i<totalFilterBtns; i++)
-      {
-        filtersBtns[i].addEventListener("click", function() 
-        {
-            filterContainer.querySelector(".active").classList.remove("active");
-            this.classList.add("active");
-
-            const filterValue = this.getAttribute("data-filter");
+/**
+ * Loading Screen Animation
+ */
+function initLoading() {
+    const loadingScreen = document.querySelector('.loading-screen');
+    const loadingPercentage = document.querySelector('.loading-percentage');
+    
+    // Update loading percentage text
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += 1;
+        loadingPercentage.textContent = `${progress}%`;
+        
+        if (progress >= 100) {
+            clearInterval(interval);
             
-            for(let k = 0; k < totalCertificateItems; k++)
-            {
-                if(filterValue === certificateItems[k].getAttribute("data-category"))
-                {
-                    certificateItems[k].classList.remove("hide");
-                    certificateItems[k].classList.add("show");   
-                }
-                else
-                {
-                    certificateItems[k].classList.remove("show");
-                    certificateItems[k].classList.add("hide");
-                }
-                if(filterValue ==="all")
-                {
-                    certificateItems[k].classList.remove("hide");
-                    certificateItems[k].classList.add("show");
-                }
-            }
-            });   
-      }
-
-// =================== THEME/DISPLAY CUSTOMIZATION ===================
-const theme = document.querySelector("#theme-button");
-const themeModal = document.querySelector(".custom-theme");
-const fontSizes = document.querySelectorAll('.choose-size span');
-const colorPalette = document.querySelectorAll('.choose-color span');
-var root = document.querySelector(":root");
-const Bg1 = document.querySelector(".bg-1");
-const Bg2 = document.querySelector(".bg-2");
-const Bg3 = document.querySelector(".bg-3");
-// Close modal 
-
-const closeThemeModal = (e) => {
-    if(e.target.classList.contains("custom-theme"))
-    {
-        themeModal.style.display = 'none';
-    }
+            // Hide loading screen with fade out effect
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 800);
+            }, 500);
+        }
+    }, 30);
 }
 
-// Open modal 
-const openThemeModal = () => {
-
-    themeModal.style.display = 'grid';
-} 
-
-theme.addEventListener("click", openThemeModal);
-themeModal.addEventListener("click", closeThemeModal);
-
-// =================== CUSTOMZIE FONT ===================
-const removeSizeSelector = () => {
-    fontSizes.forEach(size =>  {
-        size.classList.remove('active')
-    });
-}
-fontSizes.forEach(size => {
-    size.addEventListener('click', () => {
-        removeSizeSelector();
-        let fontSize;
-        size.classList.toggle('active'); 
-        if(size.classList.contains("font-size-1"))
-        {
-            fontSize = '12px';
-        }
-        else if(size.classList.contains("font-size-2"))
-        {
-            fontSize = '14px';
-        }
-        else if(size.classList.contains("font-size-3"))
-        {
-            fontSize = '16px';
-        }
-        else if(size.classList.contains("font-size-4"))
-        {
-            fontSize = '18px';
-
-        } 
-        document.querySelector('html').style.fontSize = fontSize;
-    })
-})
-// =================== PRIMARY COLOR ===================
-const changeActiveColorClass = () => {
-    colorPalette.forEach(colorPicker =>  {
-        colorPicker.classList.remove('active')
-    });
-} 
-colorPalette.forEach(color => {
-    color.addEventListener('click', () => {
-        let primaryHue; 
-        changeActiveColorClass();
-        if(color.classList.contains('color-1'))
-        {
-            primaryHue = 252;
-        }
-        else if(color.classList.contains('color-2'))
-        {
-            primaryHue = 52;
-        }
-        else if(color.classList.contains('color-3'))
-        {
-            primaryHue = 352;
-        }
-        else if(color.classList.contains('color-4'))
-        {
-            primaryHue = 152;
-        }
-        else if(color.classList.contains('color-5'))
-        {
-            primaryHue = 202;
-        }
-        color.classList.add("active");
-        root.style.setProperty('--primary-color-hue', primaryHue);
-    })
-})
-// =================== THEME BACKGROUND ===================
-let lightColorLightness; 
-let whiteColorLightness;
-let darkColorLightness;
-
-const changeBG = () => {
-    root.style.setProperty('--dark-color-lightness', darkColorLightness);
-    root.style.setProperty('--white-color-lightness', whiteColorLightness);
-    root.style.setProperty('--light-color-lightness', lightColorLightness);
-}
-Bg1.addEventListener('click', () =>{
-    darkColorLightness = '0%';
-    whiteColorLightness = '95%';
-    lightColorLightness = '95%';
-
-    Bg1.classList.add('active');
-
-    Bg2.classList.remove('active');
-    Bg3.classList.remove('active');
-    changeBG();
-
-})
-
-Bg2.addEventListener('click', () =>{
-    darkColorLightness = '95%';
-    whiteColorLightness = '20%';
-    lightColorLightness = '15%';
-
-    Bg2.classList.add('active');
-
-    Bg1.classList.remove('active');
-    Bg3.classList.remove('active');
-
-    changeBG();
-})
-
-Bg3.addEventListener('click', () =>{
-    darkColorLightness = '95%';
-    whiteColorLightness = '10%';
-    lightColorLightness = '0%';
-
-    Bg3.classList.add('active');
-
-    Bg2.classList.remove('active');
-    Bg1.classList.remove('active');
-
-    changeBG();
-})
-
-// =================== MENU SHOW ===================
-
-
-var swiper = new Swiper(".testimonial-wrapper", {
-    spaceBetween: 30,
-    loop: 'true',
-
-    pagination:
-    {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-});
-
-const sections = document.querySelectorAll("section[id]");
-
-
-window.addEventListener("scroll", navHighlighter);
-
-function navHighlighter() 
-{
-    let scrollY = window.pageYOffset;
-    sections.forEach(current => 
-    {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 50,
-        sectionId = current.getAttribute("id");
-        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight)
-        {
-            document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.add("active-link");
-        }
-        else 
-        {
-            document.querySelector(".nav-menu a[href*=" + sectionId + "]").classList.remove("active-link");
-        }
-    })
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("sendEmailButton").addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default anchor behavior
-
-        // Get user input values
-        let email = "minhtrietwork@gmail.com"; // Your email address
-        let userEmail = document.getElementById("emailInput").value.trim();
-        let subject = encodeURIComponent(document.getElementById("subjectInput").value.trim());
-        let message = encodeURIComponent(document.getElementById("messageInput").value.trim());
-
-        // Check if all fields are filled
-        if (!userEmail || !subject || !message) {
-            alert("Please fill in all fields before sending.");
-            return;
-        }
-
-        // Construct the mailto URL (include user email in the message)
-        let mailtoLink = `mailto:${email}?subject=${subject}&body=From: ${userEmail}%0A%0A${message}`;
-
-        // Open the mail client
-        window.location.href = mailtoLink;
-    });
-});
-
-// Function to open the modal and show the clicked image
-function openModal(button) {
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("modalImage");
-
-    // Find the closest certificate item and its image
-    var certificateItem = button.closest(".certificates-item");
-    var imgElement = certificateItem.querySelector("img");
-
-    // Set the modal image source to the clicked image source
-    if (imgElement) {
-        modalImg.src = imgElement.src;
-        modal.style.display = "flex"; // Show the modal
-    }
-}
-
-// Function to close the modal
-function closeModal() {
-    var modal = document.getElementById("imageModal");
-    modal.style.display = "none"; // Hide the modal
-}
-
-// Close modal when clicking outside the image
-document.getElementById("imageModal").addEventListener("click", function (event) {
-    if (event.target === this) {
-        closeModal();
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    const filterContainer = document.querySelector(".certificates-fitler-inner"),
-        filtersBtns = filterContainer.children,
-        certificateItems = document.querySelectorAll(".certificates-item"),
-        itemsPerPage = 6;
-
-    let currentPage = 1;
-    let filteredItems = [...certificateItems]; // Initially, all items are shown
-
-    // Function to filter certificates based on category
-    function filterCertificates(filterValue) {
-        filteredItems = [];
-
-        certificateItems.forEach(item => {
-            if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
-                item.style.display = "block"; // Show matching items
-                filteredItems.push(item);
-            } else {
-                item.style.display = "none"; // Fully hide non-matching items
-            }
-        });
-
-        currentPage = 1;
-        showPage(currentPage);
-        createPaginationControls();
-    }
-
-    // Function to display only items for the current page
-    function showPage(page) {
-        filteredItems.forEach((item, index) => {
-            item.style.display = (index >= (page - 1) * itemsPerPage && index < page * itemsPerPage) ? "block" : "none";
-        });
-    }
-
-    // Function to create pagination buttons dynamically
-    function createPaginationControls() {
-        const existingPagination = document.querySelector(".pagination");
-        if (existingPagination) existingPagination.remove(); // Remove previous pagination
-
-        const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
-        if (totalPages <= 1) return; // No pagination if one page
-
-        const paginationContainer = document.createElement("div");
-        paginationContainer.classList.add("pagination");
-
-        for (let i = 1; i <= totalPages; i++) {
-            const pageButton = document.createElement("button");
-            pageButton.textContent = i;
-            pageButton.addEventListener("click", function () {
-                currentPage = i;
-                showPage(currentPage);
-                updateActiveButton();
+/**
+ * Navigation and Section Switching
+ */
+function initNavigation() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Remove active class from all links
+            navLinks.forEach(item => item.classList.remove('active'));
+            
+            // Add active class to clicked link
+            link.classList.add('active');
+            
+            // Get the section id from the href attribute
+            const sectionId = link.getAttribute('href');
+            
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active-section');
             });
+            
+            // Show the selected section
+            document.querySelector(sectionId).classList.add('active-section');
+            
+            // Add section name to URL hash
+            window.location.hash = sectionId;
+        });
+    });
+    
+    // Handle initial load or direct link to section
+    function handleInitialNavigation() {
+        let targetSection = window.location.hash || '#home';
+        
+        // Remove active class from all links
+        navLinks.forEach(item => item.classList.remove('active'));
+        
+        // Add active class to the link that matches the hash
+        document.querySelector(`a[href="${targetSection}"]`).classList.add('active');
+        
+        // Hide all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active-section');
+        });
+        
+        // Show the target section
+        document.querySelector(targetSection).classList.add('active-section');
+    }
+    
+    // Handle navigation when hash changes
+    window.addEventListener('hashchange', handleInitialNavigation);
+    
+    // Handle initial load
+    setTimeout(handleInitialNavigation, 3500); // Wait for loading screen to finish
+}
 
-            paginationContainer.appendChild(pageButton);
+/**
+ * Typing Effect on Home Page
+ */
+function initTypingEffect() {
+    const typingText = document.querySelector('.typing-text');
+    const phrases = [
+        'Welcome to my portfolio',
+        'Embedded Systems Engineer',
+        'Hardware Designer',
+        'Firmware Developer',
+        'Robotics Enthusiast'
+    ];
+    
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingSpeed = 100;
+    
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+        
+        if (isDeleting) {
+            // Deleting text
+            typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+            typingSpeed = 50;
+        } else {
+            // Typing text
+            typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+            typingSpeed = 100;
         }
-
-        document.querySelector(".certificates .container").appendChild(paginationContainer);
-        updateActiveButton();
+        
+        // If word is complete, start deleting after a pause
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            typingSpeed = 1000; // Pause before deleting
+        }
+        
+        // If deletion is complete, move to next phrase
+        if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typingSpeed = 500; // Pause before typing next phrase
+        }
+        
+        setTimeout(type, typingSpeed);
     }
+    
+    // Start typing effect after loading screen
+    setTimeout(type, 4000);
+}
 
-    // Update active page button
-    function updateActiveButton() {
-        document.querySelectorAll(".pagination button").forEach((btn, index) => {
-            btn.classList.toggle("active", index + 1 === currentPage);
+/**
+ * Contact Form Handling
+ */
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const subject = document.getElementById('subject').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (!subject || !email || !message) {
+                showNotification('Please fill in all fields', 'error');
+                return;
+            }
+            
+            // Create mailto link
+            const mailtoLink = `mailto:minhtrietwork@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + email + '\n\n' + message)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success notification
+            showNotification('Opening email client...', 'success');
+            
+            // Reset form after a delay
+            setTimeout(() => {
+                contactForm.reset();
+            }, 2000);
         });
     }
+}
 
-    // Attach event listeners to filter buttons
-    for (let i = 0; i < filtersBtns.length; i++) {
-        filtersBtns[i].addEventListener("click", function () {
-            filterContainer.querySelector(".active").classList.remove("active");
-            this.classList.add("active");
-            const filterValue = this.getAttribute("data-filter");
-            filterCertificates(filterValue);
-        });
-    }
+/**
+ * Show Notification
+ */
+function showNotification(message, type = 'info') {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    
+    // Add to body
+    document.body.appendChild(notification);
+    
+    // Show notification
+    setTimeout(() => {
+        notification.classList.add('show');
+    }, 10);
+    
+    // Remove notification after 3 seconds
+    setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 300);
+    }, 3000);
+}
 
-    // Initialize with all certificates visible and paginated
-    filterCertificates("all");
+/**
+ * Add Jarvis-like HUD animations
+ */
+function initHudAnimations() {
+    // Add random data points to HUD elements
+    const hudElements = document.querySelectorAll('.hud-element');
+    
+    hudElements.forEach(element => {
+        const dataPoints = Math.floor(Math.random() * 3) + 2;
+        
+        for (let i = 0; i < dataPoints; i++) {
+            const dataPoint = document.createElement('div');
+            dataPoint.className = 'hud-data-point';
+            
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            dataPoint.style.left = `${x}%`;
+            dataPoint.style.top = `${y}%`;
+            
+            element.appendChild(dataPoint);
+        }
+    });
+}
+
+// Initialize HUD animations
+initHudAnimations();
+
+/**
+ * Add smooth scrolling for internal links
+ */
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
 });
 
+/**
+ * Add CSS class for notification styling
+ */
+const style = document.createElement('style');
+style.textContent = `
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 15px 25px;
+        background-color: var(--bg-light);
+        color: var(--text-primary);
+        border-radius: 4px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(100px);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        font-family: var(--font-primary);
+    }
+    
+    .notification.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    .notification.success {
+        border-left: 4px solid #27c93f;
+    }
+    
+    .notification.error {
+        border-left: 4px solid #ff5f56;
+    }
+    
+    .notification.info {
+        border-left: 4px solid var(--primary-blue);
+    }
+    
+    .hud-data-point {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background-color: var(--primary-blue);
+        border-radius: 50%;
+        box-shadow: 0 0 5px var(--primary-blue);
+        animation: pulse 2s infinite;
+    }
+`;
 
+document.head.appendChild(style);
