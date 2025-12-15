@@ -276,7 +276,7 @@ img {
     bottom: 20px;
     left: 20px;
     width: 300px;
-    height: 160px;
+    height: 200px;
     border-bottom: 2px solid var(--hud-border);
     border-left: 2px solid var(--hud-border);
     border-right: none;
@@ -287,7 +287,7 @@ img {
     bottom: 20px;
     right: 20px;
     width: 300px;
-    height: 160px;
+    height: 200px;
     border-bottom: 2px solid var(--hud-border);
     border-right: 2px solid var(--hud-border);
     border-left: none;
