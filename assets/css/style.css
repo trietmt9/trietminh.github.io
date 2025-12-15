@@ -110,6 +110,7 @@ img {
     align-items: center;
     z-index: 9999;
     transition: opacity var(--transition-slow);
+    will-change: opacity;
 }
 
 .loading-content {
@@ -121,6 +122,7 @@ img {
     width: 150px;
     height: 150px;
     margin: 0 auto 30px;
+    will-change: transform;
 }
 
 .circle {
@@ -276,7 +278,7 @@ img {
     bottom: 20px;
     left: 20px;
     width: 300px;
-    height: 200px;
+    height: 215px;
     border-bottom: 2px solid var(--hud-border);
     border-left: 2px solid var(--hud-border);
     border-right: none;
@@ -287,7 +289,7 @@ img {
     bottom: 20px;
     right: 20px;
     width: 300px;
-    height: 200px;
+    height: 215px;
     border-bottom: 2px solid var(--hud-border);
     border-right: 2px solid var(--hud-border);
     border-left: none;
@@ -299,8 +301,8 @@ img {
     position: fixed;
     bottom: 30px;
     left: 30px;
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     opacity: 0.7;
     z-index: -1;
 }
@@ -410,6 +412,40 @@ header {
 
 .nav-links a.active {
     color: var(--primary-blue);
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+}
+
+.mobile-menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-blue);
+    transition: all var(--transition-fast);
+    border-radius: 2px;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -1155,6 +1191,50 @@ footer {
     text-align: center;
 }
 
+/* ===== MOBILE-SPECIFIC IMPROVEMENTS ===== */
+/* Touch-friendly tap targets */
+@media (hover: none) and (pointer: coarse) {
+    .btn,
+    .nav-links a,
+    .project-card,
+    .tech-icon,
+    input,
+    textarea,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Remove hover effects on touch devices */
+    .project-card:hover {
+        transform: none;
+    }
+
+    .tech-icon:hover i {
+        transform: none;
+    }
+}
+
+/* Prevent text selection on double-tap */
+.btn,
+.nav-links a,
+.mobile-menu-toggle {
+    -webkit-tap-highlight-color: rgba(0, 168, 255, 0.2);
+    -webkit-touch-callout: none;
+    user-select: none;
+}
+
+/* Optimize animations for mobile */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 /* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 1200px) {
     .home-content {
@@ -1185,7 +1265,8 @@ footer {
     }
 
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 15px 20px;
         gap: 15px;
     }
@@ -1199,15 +1280,39 @@ footer {
         font-size: 10px;
     }
 
+    /* Mobile Menu Toggle */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
     .nav-links {
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: rgba(5, 13, 22, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
         justify-content: center;
-        gap: 15px;
-        flex-wrap: wrap;
+        align-items: center;
+        gap: 30px;
+        padding: 40px 20px;
+        transition: right var(--transition-medium);
+        border-left: 2px solid var(--primary-blue);
+        box-shadow: -5px 0 20px rgba(0, 168, 255, 0.3);
+    }
+
+    .nav-links.active {
+        right: 0;
     }
 
     .nav-links a {
-        font-size: 12px;
+        font-size: 16px;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
     }
 
     /* Main Content */
@@ -1419,7 +1524,8 @@ footer {
 
     /* Header */
     .header-container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         padding: 12px 15px;
         gap: 12px;
     }
@@ -1434,13 +1540,21 @@ footer {
         letter-spacing: 1px;
     }
 
+    .mobile-menu-toggle {
+        width: 28px;
+        height: 22px;
+    }
+
     .nav-links {
-        gap: 8px;
+        width: 80%;
+        max-width: none;
+        gap: 25px;
+        padding: 30px 20px;
     }
 
     .nav-links a {
-        font-size: 11px;
-        padding: 3px 0;
+        font-size: 15px;
+        padding: 8px 0;
     }
 
     /* Main Content */
@@ -1725,5 +1839,61 @@ footer {
 
     .footer-copyright {
         font-size: 12px;
+    }
+
+    /* Mobile-specific loading screen optimization */
+    .jarvis-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .progress-bar {
+        width: 250px;
+    }
+
+    .loading-text {
+        font-size: 14px;
+    }
+}
+
+/* ===== ADDITIONAL MOBILE OPTIMIZATIONS ===== */
+/* Performance improvements for mobile devices */
+@media (max-width: 768px) {
+    /* Reduce animation complexity on mobile */
+    .scan-line {
+        box-shadow: 0 0 10px 3px var(--primary-light-blue);
+    }
+
+    .radar-beam {
+        background: linear-gradient(to right, transparent 50%, var(--primary-blue));
+    }
+
+    /* Optimize fonts for mobile readability */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Ensure images load efficiently */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+
+    /* Smooth scrolling optimization */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Mobile menu overlay */
+    .nav-links.active::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
     }
 }
